@@ -1,0 +1,9 @@
+# BUILD
+version: "3.3"
+services:
+  nginx-reverse-proxy:
+    image: roysalazarportilla/nginx-reverse-proxy:latest
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    container_name: nginx-reverse-proxy

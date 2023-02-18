@@ -1,0 +1,14 @@
+# RUN
+version: "3.3"
+services:
+  nginx-reverse-proxy:
+    image: roysalazarportilla/nginx-reverse-proxy:latest
+    restart: always
+    ports:
+      - '80:80'
+    container_name: nginx-reverse-proxy
+    networks:
+      - web-projects-network
+networks:
+  web-projects-network:
+    external: true
