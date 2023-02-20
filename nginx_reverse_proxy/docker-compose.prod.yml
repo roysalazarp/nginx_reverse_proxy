@@ -1,12 +1,12 @@
 # RUN
 version: "3.3"
 services:
-  nginx-reverse-proxy:
-    image: roysalazarportilla/nginx-reverse-proxy:latest
+  nginx_reverse_proxy:
+    image: roysalazarportilla/nginx_reverse_proxy:latest
     restart: always
     ports:
       - '80:80'
-    container_name: nginx-reverse-proxy
+    container_name: nginx_reverse_proxy
     networks:
       - my-network
 networks:

@@ -39,8 +39,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: 'nginx-reverse-proxy'
-          DEST_DIR: 'nginx-reverse-proxy'
+          SOURCE_DIR: 'nginx_reverse_proxy'
+          DEST_DIR: 'nginx_reverse_proxy'
       
       - name: Deploy docker compose file to EC2
         env:
@@ -52,6 +52,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SERVER_USER}@${EC2_SERVER_HOST} '
             cd /home/ubuntu
             aws s3 sync s3://portfolio-roy-salazar .
-            cd ./nginx-reverse-proxy
+            cd ./nginx_reverse_proxy
             docker-compose -f docker-compose.prod.yml up -d --build 
           '
